@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tilemachos Palikaridis — Electrical & Computer Engineer</title>
+<style>
+  :root {
+    --ink: #1b232c;
+    --paper: #faf9f6;
+    --paper-dim: #f0efe9;
+    --signal: #c67a2e;
+    --signal-dim: #e3b579;
+    --line: #d8d5cb;
+    --muted: #6b6f76;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: 'Courier New', ui-monospace, monospace;
+  }
+
+  a { color: var(--signal); text-decoration: none; border-bottom: 1px solid var(--signal-dim); }
+  a:hover { border-bottom-color: var(--signal); }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  header.hero {
+    padding: 90px 0 60px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .waveform {
+    width: 100%;
+    height: 54px;
+    margin-bottom: 34px;
+    opacity: 0.85;
+  }
+
+  h1 {
+    font-size: clamp(2.3rem, 5vw, 3.2rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+
+  .role {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.15rem;
+    margin-top: 10px;
+  }
+
+  .contact-row {
+    margin-top: 26px;
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 0.88rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+  }
+
+  .contact-row a { color: var(--ink); border-bottom: 1px solid var(--line); }
+  .contact-row a:hover { border-bottom-color: var(--signal); color: var(--signal); }
+
+  section {
+    padding: 46px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    margin-bottom: 26px;
+  }
+
+  .section-num {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 0.82rem;
+    color: var(--signal);
+    padding-top: 4px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .section-body {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+  }
+
+  .lede {
+    font-size: 1.06rem;
+    max-width: 58ch;
+  }
+
+  .skill-group {
+    margin-bottom: 18px;
+  }
+
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-label {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .skill-items {
+    font-size: 1.02rem;
+  }
+
+  .entry {
+    margin-bottom: 30px;
+  }
+
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+
+  .entry-title {
+    font-size: 1.12rem;
+    font-weight: 600;
+  }
+
+  .entry-date {
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .entry-org {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin-top: 2px;
+  }
+
+  .entry ul {
+    margin: 10px 0 0 20px;
+  }
+
+  .entry li {
+    margin-bottom: 6px;
+  }
+
+  .entry-links {
+    margin-top: 10px;
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 0.82rem;
+  }
+
+  .entry-links a { margin-right: 16px; }
+
+  .simple-entry {
+    margin-bottom: 16px;
+  }
+
+  .simple-entry:last-child { margin-bottom: 0; }
+
+  .simple-title { font-weight: 600; }
+  .simple-sub { color: var(--muted); font-size: 0.95rem; font-style: italic; }
+
+  footer {
+    padding: 40px 0 70px;
+    text-align: center;
+    color: var(--muted);
+    font-family: 'Courier New', ui-monospace, monospace;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 560px) {
+    .section-head, .section-body {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .section-num { padding-top: 0; }
+    header.hero { padding: 60px 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <svg class="waveform" viewBox="0 0 700 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="0,30 30,30 45,10 60,50 75,15 90,45 105,30 140,30 155,22 170,38 185,30 220,30 235,8 250,52 265,20 280,40 295,30 330,30 345,18 360,42 375,30 410,30 425,25 440,35 455,30 490,30 505,12 520,48 535,20 550,40 565,30 600,30 615,24 630,36 645,30 700,30"
+        fill="none" stroke="#c67a2e" stroke-width="1.6"/>
+    </svg>
+    <h1>Tilemachos Palikaridis</h1>
+    <p class="role">Electrical &amp; Computer Engineer — AI &amp; Machine Learning</p>
+    <div class="contact-row">
+      <span>Heraklion, Greece</span>
+      <span>&middot;</span>
+      <a href="mailto:tilemahos00@gmail.com">tilemahos00@gmail.com</a>
+      <span>&middot;</span>
+      <span>+30 698 176 1275</span>
+      <span>&middot;</span>
+      <a href="https://github.com/P-Tilemachos" target="_blank" rel="noopener">github.com/P-Tilemachos</a>
+      <span>&middot;</span>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="profile">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <h2>Profile</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <p class="lede">
+        Electrical &amp; Computer Engineering graduate (Integrated M.Eng., EQF Level 7)
+        who has built and delivered six-plus end-to-end ML/DL projects spanning NLP,
+        computer vision, and EEG signal analysis — from data preprocessing through
+        model deployment. Diploma thesis applied deep learning to social media text
+        classification. Currently building hands-on experience with generative AI
+        and prompt-driven applications, looking to bring that foundation into applied
+        AI consulting work.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <h2>Technical Skills</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="skill-group">
+          <div class="skill-label">core — used across multiple projects</div>
+          <div class="skill-items">Python, PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">applied domains</div>
+          <div class="skill-items">NLP (NLTK, text classification), Computer Vision (OpenCV, image segmentation), Graph-based learning, Generative AI / LLM prompting</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">also familiar with</div>
+          <div class="skill-items">Java, C, SQL, MATLAB/Octave, Streamlit, Git/GitHub, HTML/CSS/JavaScript, WordPress</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head">
+      <div class="section-num">03</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Web Development &amp; Digital Content Intern</span>
+            <span class="entry-date">Nov 2025 – Feb 2026</span>
+          </div>
+          <div class="entry-org">Digital Unity — About Net</div>
+          <ul>
+            <li>Rebuilt key page templates in HTML, CSS, and JavaScript on WordPress, improving page consistency across the live site.</li>
+            <li>Managed CMS content and coordinated weekly live-site updates, supporting a consistent publishing cadence.</li>
+            <li>Conducted UI/UX reviews and implemented resulting design fixes to improve site usability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head">
+      <div class="section-num">04</div>
+      <h2>Projects</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Depression &amp; Suicide Risk Detection from Social Media</span>
+          </div>
+          <div class="entry-org">Diploma Thesis</div>
+          <ul>
+            <li>Built and evaluated ML/DL text-classification models for risk detection on social media data using NLP preprocessing and classification techniques.</li>
+            <li>Deployed a Streamlit application for live prediction and evaluation.</li>
+          </ul>
+          <div class="entry-links">
+            <a href="https://github.com/P-Tilemachos" target="_blank" rel="noopener">Repository</a>
+            <a href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">EEG Signal Classification via Graph Learning</span>
+          </div>
+          <ul>
+            <li>Constructed Pearson-correlation adjacency matrices from EEG data and trained a CNN classifier for eyes-open vs. eyes-closed detection.</li>
+            <li>Benchmarked CNN performance against SVM and Random Forest baselines.</li>
+          </ul>
+          <div class="entry-links">
+            <a href="https://github.com/P-Tilemachos" target="_blank" rel="noopener">Repository</a>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">AI-Powered CV Screening Tool</span>
+          </div>
+          <ul>
+            <li>Built a Streamlit application using the Groq API to evaluate resumes against job descriptions, generating structured match scores and keyword gap analysis via prompt engineering and JSON-based structured outputs.</li>
+            <li>Deployed the app live via Streamlit Community Cloud.</li>
+          </ul>
+          <div class="entry-links">
+            <a href="https://github.com/P-Tilemachos/CV_Sceener" target="_blank" rel="noopener">Repository</a>
+            <a href="#" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Additional Projects</span>
+          </div>
+          <ul>
+            <li>Brain Tumor MRI Segmentation — thresholding, contour extraction, and morphological operations to isolate and quantify tumor regions.</li>
+            <li>End-to-End ML Pipeline — preprocessing, feature engineering, classification, and clustering across multiple evaluated models.</li>
+            <li>Neural Network Classification &amp; SOM Clustering — model implementation, optimization, and evaluation.</li>
+            <li>Fake News Detection, IMDb Sentiment Analysis, SMS Spam Detection, Suicide Risk Detection (PyTorch/LSTM).</li>
+          </ul>
+          <div class="entry-links">
+            <a href="https://github.com/P-Tilemachos" target="_blank" rel="noopener">See all on GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head">
+      <div class="section-num">05</div>
+      <h2>Education</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="simple-entry">
+          <div class="simple-title">Integrated Master's Degree (M.Eng.), Electrical &amp; Computer Engineering — EQF Level 7</div>
+          <div class="simple-sub">Hellenic Mediterranean University</div>
+          <div style="margin-top:8px;">
+            <strong>Diploma Thesis:</strong> Predicting Depression and Suicidal Tendencies Using Social Media Posts with Machine and Deep Learning Techniques
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-head">
+      <div class="section-num">06</div>
+      <h2>Certifications</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="simple-entry">
+          <div class="simple-title">Gemini Certification for Students (K-12)</div>
+          <div class="simple-sub">Google for Education, 2026</div>
+        </div>
+        <div class="simple-entry">
+          <div class="simple-title">Introduction to Responsible AI</div>
+          <div class="simple-sub">Google Cloud Skills Boost, 2026</div>
+        </div>
+        <div class="simple-entry">
+          <div class="simple-title">Experiential Basic Skills Seminar — LinkedIn, Mendeley, Office 365, Google Forms</div>
+          <div class="simple-sub">Teaching and Learning Support Centre, Hellenic Mediterranean University, 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities">
+    <div class="section-head">
+      <div class="section-num">07</div>
+      <h2>Academic Activities</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div>
+        <div class="simple-entry"><div class="simple-title">IEEE EMBS Member</div></div>
+        <div class="simple-entry"><div class="simple-title">BIP I2E2</div><div class="simple-sub">Fontys University, Netherlands</div></div>
+        <div class="simple-entry"><div class="simple-title">BIP Cybersecurity Fundamentals</div><div class="simple-sub">Jan Kochanowski University, Poland</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages">
+    <div class="section-head">
+      <div class="section-num">08</div>
+      <h2>Languages</h2>
+    </div>
+    <div class="section-body">
+      <div></div>
+      <div class="skill-items">Greek — Native &nbsp;&middot;&nbsp; English — B2</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Built &amp; maintained by Tilemachos Palikaridis
+</footer>
+
+</body>
+</html>
